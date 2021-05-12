@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/sample.css">
+  <title>じゃんけん</title>
+</head>
+
+<body>
+  <header>
+    <h1>じゃんけん</h1>
+    <h2><div id="Raundo">ラウンド0</div></h2>
+
+  <main>
+    <ul>
+      <li id="gu_btn"><img src="img/20210509_goo_2.png" alt=グー></li>
+      <li id="cho_btn"><img src="img/20210509_cyoki_2.png" alt=チョキ></li>
+      <li id="par_btn"><img src="img/20210509_paa_2.png" alt=パー></li>
+    </ul>
+    <h2>コンピューター</h2>
+    <div id="com_hand">コンピュータの出した手は？</div>
+    <!-- <div id="result">結果は？</div> -->
+
+
+  <footer>
+    <!-- <a>フッター</a> -->
+    
+    <hr>
+    <h2><div id="result">結果は？</div></h2>
+    <!-- 私の勝利数： <input type='TEXT' name='janken_win_count') .text  size='6'> 　私の負け数： <input type='TEXT' name='janken_lose'
+      size="6"> </td> -->
+      <h2>あなたの勝利数＝<a id="janken_win">0</a> 
+          <a>あなたの負け数＝</a><a id="janken_lose">0</a>
+      </h2>
+    </tr>
+  </footer>
+</main>
+</header>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+    //ここに処理を追加
+    let janken_count = 0;
+    let janken_win_count = 0;
+    let janken_lose_count = 0;
+
+    //  グーボタン押下
+
+    $('#gu_btn').on('click', function () {
+      const randomNumber = Math.floor(Math.random() * 3);
+      if (randomNumber == 0) {
+        $('#com_hand').html('<img src="img/20210509_goo.png" alt="グー">');
+　    　$('#result').text('引き分け');
+
+      } else if (randomNumber == 1) {
+        $('#com_hand').html('<img src="img/20210509_cyoki.png" alt="ちょき">');
+        janken_count = janken_count + 1;
+        $('#Raundo').text('ラウンド' + janken_count);
+        $('#result').text('あなたの勝ち');
+        janken_win_count = janken_win_count + 1;
+        $('#janken_win').text(janken_win_count);
+ 
+     } else if (randomNumber == 2) {
+      $('#com_hand').html('<img src="img/20210509_paa.png" alt="パー">');
+      janken_count = janken_count + 1;
+      $('#Raundo').text('ラウンド' + janken_count);
+      $('#result').text('あなたの負け');
+      janken_lose_count = janken_lose_count + 1;
+        $('#janken_lose').text(janken_lose_count);
+
+    }
+    });
+
+
+    //  チョキボタン押下
+    $('#cho_btn').on('click', function () {
+      const randomNumber = Math.floor(Math.random() * 3);
+      if (randomNumber == 0) {
+        $('#com_hand').html('<img src="img/20210509_goo.png" alt="グー">');
+        janken_count = janken_count + 1;
+        $('#Raundo').text('ラウンド' + janken_count);
+        $('#result').text('あなたの負け');
+        janken_lose_count = janken_lose_count + 1;
+        $('#janken_lose').text(janken_lose_count);
+
+      } else if (randomNumber == 1) {
+        $('#com_hand').html('<img src="img/20210509_cyoki.png" alt="ちょき">');
+        $('#result').text('引き分け');
+
+      } else if (randomNumber == 2) {
+        $('#com_hand').html('<img src="img/20210509_paa.png" alt="パー">');
+        janken_count = janken_count + 1;
+        $('#Raundo').text('ラウンド' + janken_count);
+        $('#result').text('あなたの勝ち');
+        janken_win_count = janken_win_count + 1;
+        $('#janken_win').text(janken_win_count);
+       }
+    });
+
+
+    //  パーボタン押下
+    $('#par_btn').on('click', function () {
+      const randomNumber = Math.floor(Math.random() * 3);
+      if (randomNumber == 0) {
+        $('#com_hand').html('<img src="img/20210509_goo.png" alt="グー">');
+        janken_count = janken_count + 1;
+        $('#Raundo').text('ラウンド' + janken_count);
+        $('#result').text('あなたの勝ち');
+        janken_win_count = janken_win_count + 1;
+        $('#janken_win').text(janken_win_count);
+
+      } else if (randomNumber == 1) {
+        $('#com_hand').html('<img src="img/20210509_cyoki.png" alt="ちょき">');
+        janken_count = janken_count + 1;
+        $('#Raundo').text('ラウンド' + janken_count);
+        $('#result').text('あなたの負け');
+        janken_lose_count = janken_lose_count + 1;
+        $('#janken_lose').text(janken_lose_count);
+
+      } else if (randomNumber == 2) {
+        $('#com_hand').html('<img src="img/20210509_paa.png" alt="パー">');
+        $('#result').text('引き分け');
+
+      }
+    });
+
+
+  </script>
+</body>
+
+</html>

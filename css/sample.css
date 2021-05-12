@@ -1,0 +1,58 @@
+body {
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    font-size: 16px;
+    background: url(../img/gsじゃんけん王決定戦.jpg);
+    background-size: cover;
+}
+
+header {
+    /* background-color: #fff; */
+    color: #fff;
+    border-bottom: 1px solid#ccc;
+    text-align: center;
+}
+
+main {
+    border-bottom: 1px solid #ccc;
+}
+
+footer {
+    /* background-color: #fff; */
+    color: #fff;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+}
+
+p {
+    font-size: 200%;
+    text-align: center;
+    border-bottom: 1px solid #fff;
+    height: 200px;
+}
+
+ul {
+    padding: 0;
+    border-top: 1px solid #000000;
+    display: table;
+    /* 定義 */
+    table-layout: fixed;
+    width: 100%;
+}
+
+li {
+    text-align: center;
+    list-style-type: none;
+    border: 1px solid #666;
+    /* background-color: #FFF; */
+    display: table-cell;
+    /* 定義 */
+    cursor: pointer;
+}
+
+li:hover {
+    /* background: rgba #f71505; */
+    background-color:rgba(250, 138, 138, 0.8);
+    /* color: #fff; */
+}
